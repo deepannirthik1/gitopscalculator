@@ -101,3 +101,23 @@ jobs:
           uses: actions/checkout@v3
         - name: War packaging
           run: mvn -X war:war
+
+  PubishPackage:
+    runs-on: ubuntu-latest
+    needs: War
+    name: Publish package to the Github
+    steps: 
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          server-id: github
+          settings-path: ${{ github.workspace }}
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+      - name: Publish to Github Packages Apache Maven
+        run: mvn install -s settings.xml
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

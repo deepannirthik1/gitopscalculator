@@ -123,9 +123,9 @@
 	</build>
 	<distributionManagement>
     		<repository>
-        		<id>central</id>
-        		<name>a0u5nbgc65pje-artifactory-primary-0-releases</name>
-        		<url>https://phvr.jfrog.io/artifactory/gitopscalculator-libs-release</url>
+        		<id>github</id>
+        		<name>GitHub deepannirthik1 Apache Maven Packages</name>
+        		<url>https://maven.pkg.github.com/deepannirthik1/gitopscalculator</url>
     		</repository>
 	</distributionManagement>
 </project>

@@ -17,8 +17,8 @@
 		<maven-compiler-plugin-version>3.8.1</maven-compiler-plugin-version>
 		<sonar.language>java</sonar.language>
 <!--     		<sonar.host.url>http://sonar.phvr.co.in</sonar.host.url>
-    		<sonar.projectKey>gitopscalculator</sonar.projectKey> -->
-		<sonar.organization>he329178</sonar.organization>
+    		<sonar.projectKey>deepannirthik1_gitopscalculator</sonar.projectKey> -->
+		<sonar.organization>deepannirthik1</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 	<dependencies>

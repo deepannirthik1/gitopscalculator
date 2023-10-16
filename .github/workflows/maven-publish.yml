@@ -136,3 +136,19 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: ${{ secrets.DOCKER_REPO }}
           tag_with_ref: true     
+
+  PushDockerImage_GitHubPackages:
+      name: Push Docker image to GitHub Packages
+      needs: docker
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check out the repo
+          uses: actions/checkout@v3
+        - name: Push to GitHub Packages
+          uses: docker/build-push-action@v5
+          with:
+            username: ${{ github.actor }}
+            password: ${{ secrets.GITHUB_TOKEN }}
+            registry: docker.pkg.github.com
+            repository: ${{ secrets.DOCKER_REPO }}
+            tag_with_ref: true 
